@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}">
+<th:block th:fragment="content">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6" th:text="${title}">소개</h1>
+        
+        <div class="bg-white rounded-lg shadow-md p-8">
+            <p class="text-lg text-gray-700 mb-6" th:text="${message}">메시지</p>
+            
+            <h2 class="text-2xl font-semibold mb-4">기술 스택</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-blue-600">Backend</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Java 21</li>
+                        <li>• Spring Boot 3.3.5</li>
+                        <li>• Spring Data JPA</li>
+                        <li>• Thymeleaf</li>
+                        <li>• MySQL 5.7</li>
+                        <li>• Gradle (Kotlin DSL)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-green-600">Frontend</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• Tailwind CSS v4</li>
+                        <li>• Alpine.js v3</li>
+                        <li>• HTMX</li>
+                        <li>• esbuild</li>
+                        <li>• Pretendard 폰트</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h2 class="text-2xl font-semibold mb-4">프로젝트 특징</h2>
+            <ul class="space-y-3 text-gray-700">
+                <li>• <strong>SSR (Server-Side Rendering)</strong>: Thymeleaf를 통한 서버 사이드 렌더링</li>
+                <li>• <strong>반응형 디자인</strong>: Tailwind CSS로 모바일 우선 반응형 UI</li>
+                <li>• <strong>인터랙티브 UI</strong>: Alpine.js로 가벼운 클라이언트 사이드 기능</li>
+                <li>• <strong>HTMX 통합</strong>: 페이지 새로고침 없는 동적 콘텐츠 로딩</li>
+                <li>• <strong>개발 효율성</strong>: Hot reload와 자동 빌드 지원</li>
+                <li>• <strong>한국어 지원</strong>: Pretendard 폰트와 한국어 최적화</li>
+            </ul>
+        </div>
+    </div>
+</th:block>
+</html>

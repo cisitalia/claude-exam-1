@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: html}">
+<th:block th:fragment="content">
+    <div class="text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4" th:text="${title}">제목</h1>
+        <p class="text-xl text-gray-600 mb-8" th:text="${message}">메시지</p>
+        
+        <!-- Alpine.js 데모 -->
+        <div x-data="{ count: 0 }" class="bg-white rounded-lg shadow-md p-6 mb-8 max-w-md mx-auto">
+            <h3 class="text-lg font-semibold mb-4">Alpine.js 데모</h3>
+            <div class="flex items-center justify-center space-x-4">
+                <button @click="count--" class="btn btn-secondary">-</button>
+                <span class="text-2xl font-bold" x-text="count">0</span>
+                <button @click="count++" class="btn btn-primary">+</button>
+            </div>
+        </div>
+        
+        <!-- HTMX 데모 -->
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
+            <h3 class="text-lg font-semibold mb-4">HTMX 데모</h3>
+            <button 
+                hx-get="/about" 
+                hx-target="#htmx-content" 
+                hx-swap="innerHTML"
+                class="btn btn-primary">
+                About 페이지 내용 로드
+            </button>
+            <div id="htmx-content" class="mt-4 p-4 bg-gray-50 rounded">
+                여기에 내용이 로드됩니다.
+            </div>
+        </div>
+        
+        <!-- 기능 소개 -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-2">Spring Boot 3.3.5</h3>
+                <p class="text-gray-600">최신 Spring Boot 프레임워크로 강력한 백엔드</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-2">Tailwind CSS v4</h3>
+                <p class="text-gray-600">유틸리티 우선 CSS 프레임워크</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-2">Alpine.js v3</h3>
+                <p class="text-gray-600">가벼운 JavaScript 프레임워크</p>
+            </div>
+        </div>
+    </div>
+</th:block>
+</html>
