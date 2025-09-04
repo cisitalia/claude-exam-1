@@ -1,28 +1,10 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import "tailwindcss";
 
-/* Pretendard 폰트 로드 */
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css');
+/* Thymeleaf 템플릿을 스캔하도록 경로 지정(v4) */
+@source "../../resources/templates";
 
-/* 기본 스타일 */
-@layer base {
-  html {
-    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-  }
-}
+/* (옵션) 동적 클래스 safelist */
+@source inline("hidden block text-center");
 
-/* 커스텀 컴포넌트 */
-@layer components {
-  .btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-  }
-  
-  .btn-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-600 text-white hover:bg-gray-700;
-  }
-}
+@layer base { html { font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif; } }

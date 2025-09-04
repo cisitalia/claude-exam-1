@@ -1,12 +1,17 @@
-// Alpine.js 및 HTMX 로드
-import Alpine from 'alpinejs';
-import 'htmx.org';
+import Alpine from 'alpinejs'; // Alpine 전역 + 시작
+import htmx from 'htmx.org'; // htmx 전역
 
-// Alpine.js 글로벌 등록
 window.Alpine = Alpine;
+window.htmx = htmx;
 
-// Alpine.js 초기화
 Alpine.start();
+
+// (선택) Spring Security CSRF 자동 부착
+document.body.addEventListener('htmx:configRequest', (e) => {
+    const t = document.querySelector('meta[name="_csrf"]')?.content;
+    const h = document.querySelector('meta[name="_csrf_header"]')?.content;
+    if (t && h) e.detail.headers[h] = t;
+});
 
 // 전역 JavaScript 함수들
 window.app = {
