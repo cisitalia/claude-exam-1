@@ -27,7 +27,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("title", "Spring Boot 프로젝트");
+        model.addAttribute("title", "::: Spring Boot 프로젝트 :::");
         model.addAttribute("message", "환영합니다! Spring Boot + Thymeleaf + Tailwind CSS + Alpine.js + HTMX 프로젝트입니다.");
         return "index";
     }
