@@ -1,23 +1,11 @@
-# Gradle
-.gradle/
+HELP.md
+.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# IntelliJ IDEA
-.idea/
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-# VS Code
-.vscode/
-
-# Eclipse
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -29,48 +17,36 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
-# NetBeans
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-# Node.js
+### VS Code ###
+.vscode/
+
+### ENV File ###
+.env
+
+### Node.js ###
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Compiled CSS/JS
-src/main/resources/static/css/output.css
-src/main/resources/static/js/app.js
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Logs
-*.log
-logs/
-
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-*.swp
-*.swo
-*~
-
-# Database
-*.db
-*.sqlite
+.npm
+.yarn-integrity
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnp.*

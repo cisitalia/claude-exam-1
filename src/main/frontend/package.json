@@ -3,29 +3,28 @@
   "version": "1.0.0",
   "description": "Spring Boot Frontend with Tailwind CSS, Alpine.js, and htmx",
   "scripts": {
-    "build:css": "npx @tailwindcss/cli -i styles/input.css -o ../resources/static/css/output.css --minify",
-    "watch:css": "npx @tailwindcss/cli -i styles/input.css -o ../resources/static/css/output.css --watch",
-    "build:js": "npx esbuild scripts/app.js --bundle --outdir=../resources/static/js --format=iife --minify --sourcemap",
-    "watch:js": "npx esbuild scripts/app.js --bundle --outdir=../resources/static/js --format=iife --watch --sourcemap",
-    "build": "npm run build:css && npm run build:js",
-    "dev": "npm-run-all -p watch:*"
+    "build:css": "npx @tailwindcss/cli -i ./style.css -o ../resources/static/main.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./style.css -o ../resources/static/main.css --watch",
+    "build:js":  "npx esbuild ./app.js --bundle --outfile=../resources/static/app.js --format=iife --minify --sourcemap",
+    "watch:js":  "npx esbuild ./app.js --bundle --outfile=../resources/static/app.js --format=iife --watch --sourcemap",
+    "build":     "npm run build:css && npm run build:js",
+    "dev":       "npm-run-all -p watch:*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "alpinejs": "^3.14.9",
-    "dayjs": "^1.11.13",
-    "htmx.org": "^2.0.6"
-  },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/postcss": "^4.1.12",
+    "@tailwindcss/cli": "^4.1.13",
+    "@tailwindcss/postcss": "^4.1.13",
     "autoprefixer": "^10.4.21",
+    "esbuild": "^0.25.10",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.12",
-    "esbuild": "^0.25.9",
-    "npm-run-all": "^4.1.5"
+    "tailwindcss": "^4.1.13"
+  },
+  "dependencies": {
+    "alpinejs": "^3.15.0",
+    "htmx.org": "^2.0.7"
   }
 }

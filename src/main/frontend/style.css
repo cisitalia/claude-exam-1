@@ -1,0 +1,49 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import "tailwindcss";
+
+/* Thymeleaf 템플릿을 스캔하도록 경로 지정(v4) */
+@source "../resources/templates";
+
+/* (옵션) 동적 클래스 safelist */
+@source inline("hidden block text-center");
+
+/* 마루부리 폰트 설정  */
+@font-face {
+    font-family: 'MaruBuri';
+    src: url('/fonts/maruburi/MaruBuri-Regular.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'MaruBuri';
+    src: url('/fonts/maruburi/MaruBuri-SemiBold.woff2') format('woff2');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'MaruBuri';
+    src: url('/fonts/maruburi/MaruBuri-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* Tailwind v4 유틸: 마루부리 토큰/유틸 */
+@theme {
+    --font-maru: 'MaruBuri', serif;
+}
+/* 마루부리 전용 유틸리티 클래스 */
+@utility font-maru {
+    font-family: var(--font-maru);
+}
+
+/* (선택) 타이포그래피: blockquote만 자동으로 마루부리 */
+@layer components {
+    .prose blockquote { @apply font-maru; }
+}
+
+/* 사용: 인용/제목 등에 굵기까지 지정 *
+blockquote { font-weight: 600; }     * SemiBold *
+h2.font-maru-bold { font-weight: 700; }  Bold */
+
+@layer base {
+    html {
+        font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+    }
+}
